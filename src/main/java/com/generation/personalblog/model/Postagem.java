@@ -16,11 +16,11 @@ public class Postagem {
     private Long id;
 
     @NotBlank(message = "Esse atributo é de preenchimento obrigatório")
-    @Size(min = 5, max = 100, message = "Este atributo tem qye ter no minimo 5 caracteres e no maximo 100 caracteres")
+    @Size(min = 5, max = 100, message = "Este atributo tem que ter no minimo 5 caracteres e no maximo 100 caracteres")
     private String titulo;
 
     @NotBlank(message = "Esse atributo é de preenchimento obrigatório")
-    @Size(min = 5, max = 1000, message = "Este atributo tem qye ter no minimo 10 caracteres e no maximo 1000 caracteres")
+    @Size(min = 5, max = 1000, message = "Este atributo tem que ter no minimo 10 caracteres e no maximo 1000 caracteres")
     private String texto;
 
     @UpdateTimestamp
