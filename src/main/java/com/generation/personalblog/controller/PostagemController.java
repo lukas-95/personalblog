@@ -36,8 +36,6 @@ public class PostagemController {
         return postagemRepository.findById(id)
                 .map(resposta -> ResponseEntity.ok(resposta))
                 .orElse(ResponseEntity.status(HttpStatus.NOT_FOUND).build());
-
-
     }
 
     @GetMapping("/titulo/{titulo}")
@@ -53,8 +51,6 @@ public class PostagemController {
                 .body(postagemRepository.save(postagem));
 
         throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Tema não existente", null);
-
-
     }
 
     @PutMapping
