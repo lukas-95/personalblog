@@ -1,5 +1,6 @@
 package com.generation.personalblog.controller;
 
+import com.generation.personalblog.model.Postagem;
 import com.generation.personalblog.model.Usuario;
 import com.generation.personalblog.model.UsuarioLogin;
 import com.generation.personalblog.repository.UsuarioRepository;
@@ -37,6 +38,11 @@ public class UsuarioController {
         return usuarioRepository.findById(id)
                 .map(resposta -> ResponseEntity.ok(resposta))
                 .orElse(ResponseEntity.notFound().build());
+    }
+
+    @GetMapping("/usuario/{usuario}")
+    public ResponseEntity <Optional<Usuario>> getByUsuario(@PathVariable String usuario){
+        return ResponseEntity.ok(usuarioRepository.findByUsuario(usuario));
     }
 
     @PostMapping("/logar")
